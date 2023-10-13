@@ -13,12 +13,26 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  // Your code here
+  const namesBeginningWithArray = [];
+  for (let index = 0; index < names.length; index++) {
+    const element = names[index];
+    if (element[0] === char) {
+      namesBeginningWithArray.push(element);
+    }
+  }
+  return namesBeginningWithArray;
 }
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  // Your code here
+  const wordsWithVerbsArray = [];
+  for (let index = 0; index < words.length; index++) {
+    const element = words[index];
+    if (element.substring(0, 3) === "to ") {
+      wordsWithVerbsArray.push(element);
+    }
+  }
+  return wordsWithVerbsArray;
 }
 
 export function getIntegers(nums) {
