@@ -1,3 +1,5 @@
+import { isFloat } from "./util";
+
 export function getFillings(sandwich) {
   if (sandwich === undefined) throw new Error("ingredients is required");
   return sandwich.fillings;
@@ -10,7 +12,13 @@ export function isFromManchester(person) {
 
 export function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
-  // Your code here!
+  let noOfBuses = people / 40;
+  if (!isFloat(noOfBuses)) {
+    noOfBuses;
+  } else {
+    noOfBuses = Math.trunc(noOfBuses) + 1;
+  }
+  return noOfBuses;
 }
 
 export function countSheep(arr) {
