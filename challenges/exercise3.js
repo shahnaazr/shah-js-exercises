@@ -1,3 +1,5 @@
+import { isFloat } from "./util";
+
 export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   const smallNumsArray = [];
@@ -37,7 +39,14 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  const integersArray = [];
+  for (let index = 0; index < nums.length; index++) {
+    const element = nums[index];
+    if (!isFloat(element)) {
+      integersArray.push(element);
+    }
+  }
+  return integersArray;
 }
 
 export function getCities(users) {
