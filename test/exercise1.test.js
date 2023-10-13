@@ -7,7 +7,7 @@ import {
 } from "../challenges/exercise1";
 
 describe("getFillings", () => {
-  test.only("returns the fillings of a sandwich", () => {
+  test("returns the fillings of a sandwich", () => {
     const sandwich = {
       bread: "Sourdough",
       fillings: ["brie", "relish", "lettuce"],
@@ -24,7 +24,7 @@ describe("getFillings", () => {
   });
 });
 
-xdescribe("isFromManchester", () => {
+describe("isFromManchester", () => {
   test("returns true if the person is from Manchester", () => {
     const person = {
       name: "Mohammed",
