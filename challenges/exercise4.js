@@ -13,12 +13,17 @@ export const findNextNumber = (nums, n) => {
 
 export const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+  let obj = { 1: 0, 0: 0 };
+  for (let index = 0; index < str.length; index++) {
+    const element = str[index];
+    obj[element] = obj[element] + 1;
+  }
+  return obj;
 };
 
 export const reverseNumber = (n) => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  return Number(n.toString().split("").reverse().join(""));
 };
 
 export const sumArrays = (arrs) => {
