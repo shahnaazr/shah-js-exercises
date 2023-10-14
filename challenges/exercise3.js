@@ -44,12 +44,9 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  const squareRootsArray = [];
-  for (let index = 0; index < nums.length; index++) {
-    const element = nums[index];
-    squareRootsArray.push(Number(Math.sqrt(element).toFixed(2)));
-  }
-  return squareRootsArray;
+  return nums.map(function (num) {
+    return Number(Math.sqrt(num).toFixed(2));
+  });
 }
 
 export function findSentencesContaining(sentences, str) {
