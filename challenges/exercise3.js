@@ -2,14 +2,9 @@ import { isFloat } from "./util";
 
 export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  const smallNumsArray = [];
-  for (let index = 0; index < nums.length; index++) {
-    const element = nums[index];
-    if (element < 1) {
-      smallNumsArray.push(element);
-    }
-  }
-  return smallNumsArray;
+  return nums.filter(function (element) {
+    return element < 1;
+  });
 }
 
 export function findNamesBeginningWith(names, char) {
