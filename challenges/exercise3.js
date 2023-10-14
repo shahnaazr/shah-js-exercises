@@ -52,14 +52,9 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  const arrayContainingMatchingSentences = [];
-  for (let index = 0; index < sentences.length; index++) {
-    const sentence = sentences[index];
-    if (sentence.toLowerCase().includes(str)) {
-      arrayContainingMatchingSentences.push(sentence);
-    }
-  }
-  return arrayContainingMatchingSentences;
+  return sentences.filter(function (sentence) {
+    return sentence.toLowerCase().includes(str);
+  });
 }
 
 export function getLongestSides(triangles) {
