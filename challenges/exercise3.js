@@ -28,24 +28,18 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  const integersArray = [];
-  for (let index = 0; index < nums.length; index++) {
-    const element = nums[index];
-    if (!isFloat(element)) {
-      integersArray.push(element);
+  return nums.filter(function (num) {
+    if (!isFloat(num)) {
+      return num;
     }
-  }
-  return integersArray;
+  });
 }
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  const citiesArray = [];
-  for (let index = 0; index < users.length; index++) {
-    const element = users[index];
-    citiesArray.push(element.data.city.displayName);
-  }
-  return citiesArray;
+  return users.map(function (user) {
+    return user.data.city.displayName;
+  });
 }
 
 export function getSquareRoots(nums) {
