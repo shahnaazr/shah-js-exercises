@@ -51,6 +51,20 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  let newStr = "";
+  for (let index = 0; index < str.length; index++) {
+    const element = str[index];
+    if (element === "A") {
+      newStr += "T";
+    } else if (element === "T") {
+      newStr += "A";
+    } else if (element === "C") {
+      newStr += "G";
+    } else if (element === "G") {
+      newStr += "C";
+    } else newStr += element;
+  }
+  return newStr;
 };
 
 /**

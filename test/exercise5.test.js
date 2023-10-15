@@ -39,3 +39,21 @@ describe("isValidDNA", () => {
     expect(isValidDNA("rbedsdf dsfdsf ffh kkk")).toBe(false);
   });
 });
+
+describe("getComplementaryDNA", () => {
+  test("return complementaryDNA, T if string contains A", () => {
+    expect(getComplementaryDNA("ABF")).toBe("TBF");
+  });
+
+  test("return complementaryDNA, A if string contains T", () => {
+    expect(getComplementaryDNA("ETF")).toBe("EAF");
+  });
+
+  test("return complementaryDNA, C if string contains G", () => {
+    expect(getComplementaryDNA("MBG")).toBe("MBC");
+  });
+
+  test("return complementaryDNA, G if string contains C", () => {
+    expect(getComplementaryDNA("WERC")).toBe("WERG");
+  });
+});
