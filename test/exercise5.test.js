@@ -60,7 +60,6 @@ describe("getComplementaryDNA", () => {
 
 describe("isItPrime", () => {
   test("returns true if number is a prime number", () => {
-    expect(isItPrime(1)).toBe(true);
     expect(isItPrime(2)).toBe(true);
     expect(isItPrime(3)).toBe(true);
     expect(isItPrime(5)).toBe(true);

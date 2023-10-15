@@ -74,7 +74,7 @@ export const getComplementaryDNA = (str) => {
  */
 export const isItPrime = (n) => {
   if (n === undefined) throw new Error("n is required");
-  if (n < 1) throw new Error("n should be positive");
+  if (n <= 1) throw new Error("n should be greater than 1");
   let isPrime = true;
   for (let num = 2; num < n; num++) {
     if (n % num === 0) {
