@@ -1,13 +1,13 @@
-export function getSquares(nums) {
+export const getSquares = (nums) => {
   if (nums === undefined) throw new Error("nums is required");
   const squaresOfNumberArray = [];
   nums.forEach((element) => {
     squaresOfNumberArray.push(element * element);
   });
   return squaresOfNumberArray;
-}
+};
 
-export function camelCaseWords(words) {
+export const camelCaseWords = (words) => {
   if (words === undefined) throw new Error("words is required");
   const camelCaseWords = [];
   for (let index = 0; index < words.length; index++) {
@@ -17,18 +17,18 @@ export function camelCaseWords(words) {
     } else camelCaseWords.push(element[0].toUpperCase() + element.substring(1));
   }
   return camelCaseWords.join("");
-}
+};
 
-export function getTotalSubjects(people) {
+export const getTotalSubjects = (people) => {
   if (people === undefined) throw new Error("people is required");
   let totalSubjectsCount = 0;
   people.forEach((person) => {
     totalSubjectsCount = totalSubjectsCount + person.subjects.length;
   });
   return totalSubjectsCount;
-}
+};
 
-export function checkIngredients(menu, ingredient) {
+export const checkIngredients = (menu, ingredient) => {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
   let isIngredientInMenu = false;
@@ -40,9 +40,9 @@ export function checkIngredients(menu, ingredient) {
     });
   });
   return isIngredientInMenu;
-}
+};
 
-export function duplicateNumbers(arr1, arr2) {
+export const duplicateNumbers = (arr1, arr2) => {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
   const duplicateNumbersArray = [];
@@ -59,4 +59,4 @@ export function duplicateNumbers(arr1, arr2) {
     }
   }
   return duplicateNumbersArray.sort();
-}
+};
