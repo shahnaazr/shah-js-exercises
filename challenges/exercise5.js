@@ -29,6 +29,19 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  let isValid = false;
+  for (let index = 0; index < str.length; index++) {
+    const element = str[index];
+    if (
+      element === "A" ||
+      element === "C" ||
+      element === "G" ||
+      element === "T"
+    ) {
+      isValid = true;
+    }
+  }
+  return isValid;
 };
 
 /**

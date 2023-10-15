@@ -26,3 +26,16 @@ describe("sumMultiples", () => {
     expect(sumMultiples([2, 7, 13, 22, 2, 4, 11])).toBe(0);
   });
 });
+
+describe("isValidDNA", () => {
+  test("return true for string containing C, G, T or A", () => {
+    expect(isValidDNA("Abedsdf dsfdsf")).toBe(true);
+    expect(isValidDNA("zbeCsdfdsf dsf")).toBe(true);
+    expect(isValidDNA("sbedsd fGsfdsf")).toBe(true);
+    expect(isValidDNA("rbe dTdfdsf dsf")).toBe(true);
+  });
+
+  test("return false for string not containing neither C, G, T or A", () => {
+    expect(isValidDNA("rbedsdf dsfdsf ffh kkk")).toBe(false);
+  });
+});
