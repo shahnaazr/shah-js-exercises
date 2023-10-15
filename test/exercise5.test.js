@@ -99,3 +99,33 @@ describe("createMatrix", () => {
     ]);
   });
 });
+
+describe("areWeCovered", () => {
+  test("returns true if 3 or more than 3 staff scheduled for the given day.", () => {
+    const staff = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Molly", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Dolly", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Lolly", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+    ];
+    expect(areWeCovered(staff, "Tuesday")).toBe(true);
+  });
+
+  test("returns false if less than 3 staff scheduled for the given day.", () => {
+    const staff = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Molly", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+    ];
+    expect(areWeCovered(staff, "Tuesday")).toBe(false);
+  });
+
+  test("returns false if less than 3 staff scheduled for the given day.", () => {
+    const staff = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Molly", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Dolly", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Lolly", rota: ["Saturday", "Sunday", "Tuesday", "Friday"] },
+    ];
+    expect(areWeCovered(staff, "Friday")).toBe(false);
+  });
+});

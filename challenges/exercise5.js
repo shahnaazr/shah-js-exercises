@@ -125,4 +125,16 @@ export const createMatrix = (n, fill) => {
 export const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  let staffCount = 0;
+  let dayCount = 0;
+  for (let index = 0; index < staff.length; index++) {
+    staffCount += 1;
+    const staffRota = staff[index].rota;
+    for (let index = 0; index < staffRota.length; index++) {
+      if (day === staffRota[index]) {
+        dayCount += 1;
+      }
+    }
+  }
+  return staffCount >= 3 && dayCount >= 3;
 };
