@@ -7,13 +7,11 @@ export const getSquares = (nums) => {
 
 export const camelCaseWords = (words) => {
   if (words === undefined) throw new Error("words is required");
-  const camelCaseWords = [];
-  for (let index = 0; index < words.length; index++) {
-    const element = words[index];
+  const camelCaseWords = words.map((element, index) => {
     if (index === 0) {
-      camelCaseWords.push(element[0].toLowerCase() + element.substring(1));
-    } else camelCaseWords.push(element[0].toUpperCase() + element.substring(1));
-  }
+      return element[0].toLowerCase() + element.substring(1);
+    } else return element[0].toUpperCase() + element.substring(1);
+  });
   return camelCaseWords.join("");
 };
 
