@@ -73,3 +73,29 @@ describe("isItPrime", () => {
     expect(isItPrime(9)).toBe(false);
   });
 });
+
+describe("createMatrix", () => {
+  test("returns a 3 by 3 matrix with each element as foo if number 3 and value is foo", () => {
+    expect(createMatrix(3, "foo")).toStrictEqual([
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+    ]);
+  });
+
+  test("returns a 2 by 2 matrix with each element as fill if number 2 and value is fill", () => {
+    expect(createMatrix(2, "fill")).toStrictEqual([
+      ["fill", "fill"],
+      ["fill", "fill"],
+    ]);
+  });
+
+  test("returns a 4 by 4 matrix with each element as fill if number 4 and value is hello world", () => {
+    expect(createMatrix(4, "hello world")).toStrictEqual([
+      ["hello world", "hello world", "hello world", "hello world"],
+      ["hello world", "hello world", "hello world", "hello world"],
+      ["hello world", "hello world", "hello world", "hello world"],
+      ["hello world", "hello world", "hello world", "hello world"],
+    ]);
+  });
+});
