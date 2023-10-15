@@ -19,7 +19,7 @@ export const getTotalSubjects = (people) => {
   if (people === undefined) throw new Error("people is required");
   let totalSubjectsCount = 0;
   people.forEach((person) => {
-    totalSubjectsCount = totalSubjectsCount + person.subjects.length;
+    totalSubjectsCount += person.subjects.length;
   });
   return totalSubjectsCount;
 };
@@ -30,9 +30,7 @@ export const checkIngredients = (menu, ingredient) => {
   let isIngredientInMenu = false;
   menu.forEach((menuObj) => {
     menuObj.ingredients.forEach((element) => {
-      if (element === ingredient) {
-        return (isIngredientInMenu = true);
-      }
+      if (element === ingredient) return (isIngredientInMenu = true);
     });
   });
   return isIngredientInMenu;
