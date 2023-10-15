@@ -57,3 +57,20 @@ describe("getComplementaryDNA", () => {
     expect(getComplementaryDNA("WERC")).toBe("WERG");
   });
 });
+
+describe("isItPrime", () => {
+  test("returns true if number is a prime number", () => {
+    expect(isItPrime(1)).toBe(true);
+    expect(isItPrime(2)).toBe(true);
+    expect(isItPrime(3)).toBe(true);
+    expect(isItPrime(5)).toBe(true);
+    expect(isItPrime(7)).toBe(true);
+  });
+
+  test("returns false if number is not a prime number", () => {
+    expect(isItPrime(4)).toBe(false);
+    expect(isItPrime(6)).toBe(false);
+    expect(isItPrime(8)).toBe(false);
+    expect(isItPrime(9)).toBe(false);
+  });
+});
