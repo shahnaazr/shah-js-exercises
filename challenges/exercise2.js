@@ -40,17 +40,15 @@ export const duplicateNumbers = (arr1, arr2) => {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
   const duplicateNumbersArray = [];
-  for (let arr1Index = 0; arr1Index < arr1.length; arr1Index++) {
-    const arr1Element = arr1[arr1Index];
-    for (let arr2Index = 0; arr2Index < arr2.length; arr2Index++) {
-      const arr2Element = arr2[arr2Index];
+  arr1.forEach((arr1Element) => {
+    arr2.forEach((arr2Element) => {
       if (
         arr1Element === arr2Element &&
         !duplicateNumbersArray.includes(arr1Element)
       ) {
         duplicateNumbersArray.push(arr1Element);
       }
-    }
-  }
+    });
+  });
   return duplicateNumbersArray.sort();
 };
