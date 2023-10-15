@@ -13,9 +13,7 @@ export const isFromManchester = (person) => {
 export const getBusNumbers = (people) => {
   if (people === undefined) throw new Error("people is required");
   let noOfBuses = people / 40;
-  if (!isFloat(noOfBuses)) {
-    noOfBuses;
-  } else {
+  if (isFloat(noOfBuses)) {
     noOfBuses = Math.trunc(noOfBuses) + 1;
   }
   return noOfBuses;
