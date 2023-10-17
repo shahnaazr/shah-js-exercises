@@ -1,8 +1,6 @@
 export const getSquares = (nums) => {
   if (nums === undefined) throw new Error("nums is required");
-  return nums.map((element) => {
-    return element * element;
-  });
+  return nums.map((element) => element * element);
 };
 
 export const camelCaseWords = (words) => {
