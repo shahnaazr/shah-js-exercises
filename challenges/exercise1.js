@@ -15,7 +15,7 @@ export const getBusNumbers = (people) => {
   const MAX_PEOPLE_PER_BUS = 40;
   let noOfBuses = people / MAX_PEOPLE_PER_BUS;
   if (isFloat(noOfBuses)) {
-    noOfBuses = Math.trunc(noOfBuses) + 1;
+    noOfBuses = Math.ceil(noOfBuses);
   }
   return noOfBuses;
 };
