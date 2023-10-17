@@ -22,13 +22,7 @@ export const getBusNumbers = (people) => {
 
 export const countSheep = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
-  let count = 0;
-  arr.forEach((element) => {
-    if (element.toLowerCase() === "sheep") {
-      count = count + 1;
-    }
-  });
-  return count;
+  return arr.filter((element) => element.toLowerCase() === "sheep").length;
 };
 
 export const hasMPostCode = (person) => {
